@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr AIT Campus Voice — discover campus announcements, events, workshops, placement opportunities, and student activities.">
+  <meta name="theme-color" content="#080b16">
+  <title>Dr AIT Campus Voice | Your Voice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="navbar">
+    <a href="#home" class="logo" id="log" aria-label="Dr AIT Campus Voice home">
+      <span class="logo-icon" aria-hidden="true">🎙</span>
+      <span>Dr AIT <span class="logo-accent">Campus Voice</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+      aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-links" id="primaryNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#announcements" class="nav-link">Announcements</a>
+      <a href="#share" class="nav-link nav-cta">Share Your Voice</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="hero-content">
+        <span class="tag"><span class="tag-dot"></span> YOUR CAMPUS. YOUR COMMUNITY.</span>
+        <h1>DR AIT <span>CAMPUS VOICE</span></h1>
+        <h2>Your <span>Voice.</span></h2>
+        <p>Every student has a story. Every opinion matters. Stay connected with everything happening across your campus.</p>
+        <a href="#announcements" class="primary-btn">Explore Announcements <span aria-hidden="true">→</span></a>
+        <p class="footer-text">BUILT FOR STUDENTS, POWERED BY YOU</p>
+      </div>
+      <a class="scroll-cue" href="#announcements" aria-label="Scroll to announcements"><span></span></a>
+    </section>
+
+    <section class="announcements-section section-pad" id="announcements">
+      <div class="section-heading">
+        <span class="tag">STAY IN THE LOOP</span>
+        <h2>Campus <span>Announcements.</span></h2>
+        <p>Discover events, opportunities, workshops, placement updates, and activities from your campus.</p>
+      </div>
+
+      <div class="announcement-tools">
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="searchInput" placeholder="Search announcements..."
+            aria-label="Search announcements" autocomplete="off">
+          <kbd class="search-hint" aria-hidden="true">/</kbd>
+        </label>
+
+        <div class="filter-row">
+          <div class="filter-buttons" id="filterButtons" aria-label="Filter announcements by category">
+            <button type="button" class="filter-btn active" data-category="All" aria-pressed="true">All</button>
+            <button type="button" class="filter-btn" data-category="Events" aria-pressed="false">Events</button>
+            <button type="button" class="filter-btn" data-category="Workshops" aria-pressed="false">Workshops</button>
+            <button type="button" class="filter-btn" data-category="Placements" aria-pressed="false">Placements</button>
+            <button type="button" class="filter-btn" data-category="Clubs" aria-pressed="false">Clubs</button>
+            <button type="button" class="filter-btn" data-category="General" aria-pressed="false">General</button>
+          </div>
+          <p class="results-count" id="resultsCount" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="announcement-grid" id="announcementGrid" aria-live="polite"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-icon" aria-hidden="true">🔎</span>
+        <h3>No announcements found</h3>
+        <p>Try another search term or select a different category.</p>
+        <button type="button" id="resetFilters" class="secondary-btn">Clear Search &amp; Filters</button>
+      </div>
+    </section>
+
+    <section class="share-section section-pad" id="share">
+      <div class="section-heading">
+        <span class="tag">YOUR IDEAS MATTER</span>
+        <h2>What's on your <span>mind?</span></h2>
+        <p>Share your thoughts, ideas, and campus stories.</p>
+      </div>
+
+      <div class="form-shell">
+        <div class="form-note">
+          <span class="form-note-icon" aria-hidden="true">✦</span>
+          <h3>Your voice can make a difference.</h3>
+          <p>Have an idea, suggestion, or campus story? Tell the community.</p>
+        </div>
+
+        <form id="voiceForm">
+          <div class="form-field">
+            <label for="studentName">Your name</label>
+            <input type="text" id="studentName" name="studentName"
+              placeholder="Enter your name" maxlength="80" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="studentVoice">Your message</label>
+            <textarea id="studentVoice" name="studentVoice"
+              placeholder="Write your thoughts here..." maxlength="1000" rows="5" required></textarea>
+            <span class="character-count" id="characterCount">0 / 1000</span>
+          </div>
+
+          <button type="submit" class="primary-btn form-submit">Submit Your Voice <span aria-hidden="true">→</span></button>
+          <p id="message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a href="#home" class="footer-brand">🎙 Dr AIT Campus Voice</a>
+    <p>© 2026 Dr AIT Campus Voice. All rights reserved.</p>
+    <a href="#home" class="back-to-top">Back to top ↑</a>
+  </footer>
+</body>
+</html>
